@@ -122,6 +122,7 @@ const Navbar = () => {
     }
 
     const { user } = useContext(Authcontext)
+    console.log(user)
 
     return (
         <nav className="text-white py-6  lg:px-0 px-4 items-center relative z-10
@@ -140,7 +141,9 @@ const Navbar = () => {
                         <input className={`border-none  focus:outline-none ${search ? 'w-[100px] opacity-100 transition-all duration-500 ease-in-out ' : 'w-0 opacity-0 transition-all duration-500 ease-in-out text-black'} `} placeholder="search" type="text" />
                         <FaSearch className="z-40 text-black" onClick={searchToggole} />
                     </div>
-                    <Link>Login</Link>
+                    {
+                        user ? <Link>Logout</Link> : <Link to='/login'>Login</Link>
+                    }
                 </div>
             </div>
 
@@ -165,7 +168,7 @@ const Navbar = () => {
                         <FaSearch className="z-40 text-black" onClick={searchToggole} />
                     </div>
                     {
-                        user ? <><Link>Login</Link></> : <><Link>Log Out</Link></>
+                        user ? <Link>Logout</Link> : <Link to='/login'>Login</Link>
                     }
                 </div>
             </div>
