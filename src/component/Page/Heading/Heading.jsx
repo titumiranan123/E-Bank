@@ -11,10 +11,10 @@ const Heading = ({ mainHeading, title, subHeading }) => {
                 data-aos-duration="1000" data-aos="fade-down"
                 data-aos-anchor-placement="bottom-bottom"
                 className=" text-center">
-                <h2 className="text-white text-4xl lg:text-[60px]">{mainHeading}</h2>
+                <h2 className="text-white mt-8 text-4xl lg:text-[60px]">{mainHeading}</h2>
             </div>
             <div data-aos-duration="1000" data-aos-delay="100" data-aos='fade-left' className="text-left">
-                <p className="text-white mt-8 lg:mt-3 text-center text-[20px]">{subHeading} </p>
+                <p className="text-white mt-8  lg:mt-8 text-center text-[20px]">{subHeading} </p>
             </div>
 
 

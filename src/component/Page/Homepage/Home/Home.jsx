@@ -1,6 +1,7 @@
 
 import Header from "../Header/Header";
 import LoanFinance from "../Loan&finance/LoanFinance";
+import Ournews from "../OurNews/Ournews";
 import SecureMoneySection from "../SecureMoney/SecureMoneySection";
 import Service from "../Service/Service";
 
@@ -10,7 +11,7 @@ import Service from "../Service/Service";
 
 const Home = () => {
     return (
-        <div className="h-[5414px]">
+        <div className="">
 
             <div>
                 <Header />
@@ -20,6 +21,7 @@ const Home = () => {
             </div>
             <LoanFinance />
             <SecureMoneySection />
+            <Ournews />
 
         </div>
     );
