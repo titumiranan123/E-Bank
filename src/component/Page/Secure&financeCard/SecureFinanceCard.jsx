@@ -12,8 +12,8 @@ const SecureFinanceCard = ({ title, image }) => {
 
                 </div>
                 <div className="card-body bg-black bg-opacity-10 group-hover:bg-opacity-40 h-full  absolute text-white bottom-0  py-28 p-5 space-y-2">
-                    <h2 className="card-title">{title}</h2>
-                    <p>If a dog chews shoes whose shoes does he choose?</p>
+                    <h2 className="card-title font-bold">{title}</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit natus libero cupiditate!</p>
                     <div className=" absolute w-1/2 ">
                         <div className="group-hover:opacity-0">
                             <FaArrowRight className="text-orange-500" />

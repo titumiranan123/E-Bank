@@ -12,7 +12,7 @@ const Ournews = () => {
 
 
     return (
-        <div>
+        <div className="mt-5 mb-10">
             <div>
                 <Heading title={title} mainHeading={mainHeading} subHeading={subHeading} ></Heading>
             </div>
