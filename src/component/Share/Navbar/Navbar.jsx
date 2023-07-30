@@ -1,7 +1,9 @@
 import { useContext, useState } from "react";
-import { FaAngleDown, FaAngleRight, FaHamburger, FaSearch } from "react-icons/fa";
+import { FaAngleDown, FaAngleRight, FaSearch } from "react-icons/fa";
+import { HiMenu, HiMenuAlt2 } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import { Authcontext } from "../../Provider/Provider";
+import Swal from "sweetalert2";
 
 const Navbar = () => {
     const [navopen, setnavopen] = useState(false);
@@ -14,6 +16,20 @@ const Navbar = () => {
     const toggleMobileNav = () => {
         setnavopen(!navopen);
     };
+    const { logOut } = useContext(Authcontext)
+    const singOut = () => {
+        logOut()
+            .then(res => {
+                console.log(res)
+                Swal.fire({
+                    icon: 'success',
+                    title: "LogOut Sucess"
+                })
+            })
+            .then(err => {
+                console.log(err)
+            })
+    }
     const investItem = <>
         <div className="flex flex-col  w-full space-y-2 justify-center bg-[#0F0826] p-10 items-center text-[#3B85D6]">
             <Link className="text-[#3B85D6]">Investing & Financial Planning </Link>
@@ -142,7 +158,7 @@ const Navbar = () => {
                         <FaSearch className="z-40 text-black" onClick={searchToggole} />
                     </div>
                     {
-                        user ? <Link>Logout</Link> : <Link to='/login'>Login</Link>
+                        user ? <Link onClick={singOut}>Logout</Link> : <Link to='/login'>Login</Link>
                     }
                 </div>
             </div>
@@ -154,9 +170,11 @@ const Navbar = () => {
                 <div className="flex justify-between items-center lg:hidden">
                     <button
                         onClick={toggleMobileNav}
-                        className="text-white focus:outline-none"
+                        className="text-white focus:outline-none font-bold text-3xl"
                     >
-                        <FaHamburger />
+                        {
+                            !navopen ? <HiMenu /> : <HiMenuAlt2 />
+                        }
                     </button>
                 </div>
                 <div className="mx-auto">
@@ -168,7 +186,7 @@ const Navbar = () => {
                         <FaSearch className="z-40 text-black" onClick={searchToggole} />
                     </div>
                     {
-                        user ? <Link>Logout</Link> : <Link to='/login'>Login</Link>
+                        user ? <Link onClick={singOut}>Logout</Link> : <Link to='/login'>Login</Link>
                     }
                 </div>
             </div>

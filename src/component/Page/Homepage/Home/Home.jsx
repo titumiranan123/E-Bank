@@ -11,18 +11,12 @@ import Service from "../Service/Service";
 
 const Home = () => {
     return (
-        <div className="">
-
-            <div>
-                <Header />
-            </div>
-            <div className="">
-                <Service />
-            </div>
+        <div className="mx-auto">
+            <Header />
+            <Service />
             <LoanFinance />
             <SecureMoneySection />
             <Ournews />
-
         </div>
     );
 };
